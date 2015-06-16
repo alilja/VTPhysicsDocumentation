@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE scene SYSTEM "Scene.dtd">
+
+<scene name="Example">
+    <models>
+        <model id="world">
+            <file>${VT_MODELS_PATH}/Example/world.obj</file>
+            <collidables>
+                <geode shape="BOX">floor\.[0-9]+_Plane.*</geode>
+                <geode shape="BOX">Cube\.[0-9]+_Cube\.[0-9]+</geode>
+            </collidables>
+            <physics>
+                <mass>0</mass>
+            </physics>
+        </model>
+
+        <model id="house">
+            <file>${VT_MODELS_PATH}/Example/house.obj</file>
+            <position x="-7.24" y="0.0" z="-20.48" />
+            <collidables>
+                <geode shape="BOX">Walls\.[0-9]+_Cube\.[0-9]+</geode>
+            </collidables>
+            <physics>
+                <mass>0</mass>
+            </physics>
+        </model>
+
+        <model id="door">
+            <file>${VT_MODELS_PATH}/Example/door.obj</file>
+            <position node="house_door_Cube.003" />
+            <collidables>
+                <geode shape="BOX">Cube\.[0-9]+_Cube\.[0-9]+</geode>
+            </collidables>
+            <physics>
+                <mass>0</mass>
+            </physics>
+        </model>
+
+        <model id="cow">
+            <file>${VT_MODELS_PATH}/cow.osg</file>
+            <position x="0" y="10" z="0" />
+            <collidables>
+                <geode shape="BOX">cow.*</geode>
+            </collidables>
+            <physics>
+                <mass>10.0</mass>
+                <restitution>0.8</restitution>
+            </physics>
+        </model>
+    </models>
+</scene>
