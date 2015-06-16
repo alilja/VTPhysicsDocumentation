@@ -1,7 +1,20 @@
 Dynamic Physics Engine Documentation
 ====================================
 
-The system is designed to make upgrading as simple as possible. Just use ``loadModel`` like you normally would, except don't use ``addChild`` afterwards.
+The system is designed to make upgrading as simple as possible. Just use ``loadModel`` like you normally would, except don't use ``addChild`` afterwards:
+
+    void Example::configure(const std::string& config_file){
+        ...
+
+        loadModel(conf, "world", rootNode_);
+        loadModel(conf, "house", rootNode_);
+        loadModel(conf, "door", rootNode_);
+        loadModel(conf, "cow", rootNode_);
+
+        ...
+    }
+
+``loadModel`` will still return a ``Node*``, so make sure you remove any ``addChild`` calls you have.
 
 # System Structure
 
